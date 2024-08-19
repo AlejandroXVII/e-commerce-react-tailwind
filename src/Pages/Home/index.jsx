@@ -1,9 +1,12 @@
-function Home() {
+import Layout from "../../Components/Layout";
+import Card from "../../Components/Card";
+const Home = () => {
   return (
-    <div className="bg-blue-600">
-      <p>Home</p>
-    </div>
+    <Layout>
+      Home
+      <Card />
+    </Layout>
   );
-}
+};
 
 export default Home;
