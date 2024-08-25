@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { calTotalPrice } from "../utils";
 
 export const ShoppingCartContext = createContext();
 
@@ -29,6 +30,21 @@ export const ShoppingCartProvider = ({ children }) => {
     setCartItems(newCartItems);
   };
 
+  //Order
+  const [order, setOrder] = useState([]);
+  const addOrder = (items) => {
+    const newOrder = {
+      itemList: items,
+      numberItems: items.length,
+      date: Date.now(),
+      total: calTotalPrice(items),
+    };
+    setOrder([...order, newOrder]);
+    setCartItems([]);
+    setIsOpenCartSideMenu(false);
+    //setCount(0);
+  };
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -44,6 +60,8 @@ export const ShoppingCartProvider = ({ children }) => {
         openCartSideMenu,
         closeCartSideMenu,
         handleCartItemDelate,
+        addOrder,
+        order,
       }}
     >
       {children}

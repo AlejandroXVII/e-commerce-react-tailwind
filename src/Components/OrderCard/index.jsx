@@ -15,10 +15,12 @@ const OrderCard = ({ id, title, imageURL, price, handleDelate }) => {
       </div>
       <div className="flex items-center gap-2">
         <p className="text-lg font-medium">{price}</p>
-        <XMarkIcon
-          onClick={() => handleDelate(id)}
-          className="h-6 w-6 text-slate-600 cursor-pointer"
-        />
+        {handleDelate ? (
+          <XMarkIcon
+            onClick={() => handleDelate(id)}
+            className="h-6 w-6 text-slate-600 cursor-pointer"
+          />
+        ) : null}
       </div>
     </div>
   );

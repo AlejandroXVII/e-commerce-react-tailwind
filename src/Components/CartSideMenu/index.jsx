@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 import OrderCard from "../../Components/OrderCard";
 import { calTotalPrice } from "../../utils";
+import { Link } from "react-router-dom";
 const CartSideMenu = () => {
   let context = useContext(ShoppingCartContext);
   return (
@@ -29,13 +30,21 @@ const CartSideMenu = () => {
           />
         ))}
       </div>
-      <div className="mt-auto mb-6 pt-6">
-        <p className="w-full flex justify-between px-6 font-medium">
+      <div className="mt-auto mb-6 pt-6 px-6">
+        <p className="w-full flex justify-between  font-medium">
           <span>Total:</span>
           <span className="text-lg font-bold">
             {calTotalPrice(context.cartItems)}
           </span>
         </p>{" "}
+        <Link to="/my-orders/last">
+          <button
+            onClick={() => context.addOrder(context.cartItems)}
+            className="bg-black text-white w-full py-3 rounded-lg"
+          >
+            Add Order
+          </button>
+        </Link>
       </div>
     </aside>
   );
