@@ -36,7 +36,7 @@ export const ShoppingCartProvider = ({ children }) => {
     const newOrder = {
       itemList: items,
       numberItems: items.length,
-      date: Date.now(),
+      date: new Date(),
       total: calTotalPrice(items),
     };
     setOrder([...order, newOrder]);
