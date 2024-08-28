@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const OrdersCard = ({ amount, date, totalPrice, index }) => {
   return (
     <Link to={`/my-orders/${index}`}>
-      <div className="flex justify-between items-center w-60 border border-black p-3 rounded-lg my-3 shadow">
+      <div className="flex justify-between items-center w-80 border border-black p-3 rounded-lg my-3 shadow">
         <div>
           <p className="flex items-center mb-3">
             <CalendarIcon className="w-5 h-5 mr-1" />

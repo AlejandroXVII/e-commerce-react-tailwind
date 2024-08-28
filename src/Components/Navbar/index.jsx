@@ -15,6 +15,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.updatePath()}
           >
             All
           </NavLink>
@@ -23,6 +24,7 @@ const Navbar = () => {
           <NavLink
             to="/clothes"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.updatePath("clothes")}
           >
             Clothes
           </NavLink>
@@ -31,14 +33,16 @@ const Navbar = () => {
           <NavLink
             to="/electronics"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.updatePath("electronics")}
           >
             Electronics
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/fornitures"
+            to="/furniture"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.updatePath("furniture")}
           >
             Fornitures
           </NavLink>
@@ -47,6 +51,7 @@ const Navbar = () => {
           <NavLink
             to="/toys"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.updatePath("toys")}
           >
             Toys
           </NavLink>
@@ -55,6 +60,7 @@ const Navbar = () => {
           <NavLink
             to="/others"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.updatePath("others")}
           >
             Others
           </NavLink>
